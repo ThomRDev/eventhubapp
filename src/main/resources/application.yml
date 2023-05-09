@@ -1,0 +1,17 @@
+#event.hubs.connection.string=Endpoint=sb://ehubnamespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=D0sK9SN97/Mp+kazKIvIcF28lfvu8kz2i+AEhNm0x3s=;EntityPath=myeventhub
+#event.hubs.consumer.group=$Default
+#spring.data.mongodb.uri=mongodb://esbeventdb:oJMnwKY4xm7T7gwu5V8pafsBRIEplokfJyxpglkejer7kRgOafDI9l2YCfAuPS2CpktkNB2j2K9eACDbKZp8kA==@esbeventdb.mongo.cosmos.azure.com:10255/events?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000
+##
+#
+##spring.application.name=config-server
+##server.port=8080
+##spring.cloud.config.server.git.uri=https://github.com/ThomRDev/properties
+###spring.cloud.config.server.git.clone-on-start=true
+
+spring:
+  application:
+    name: evaluacion
+  main:
+    allow-bean-definition-overriding: true
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
